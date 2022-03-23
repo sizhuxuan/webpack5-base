@@ -3,6 +3,7 @@ const path = require('path') // node.js 的路径模块
 const miniSVGDataURI = require('mini-svg-data-uri')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
   entry: {
@@ -24,6 +25,9 @@ module.exports = {
     }),
 
     new MiniCssExtractPlugin(),
+
+    // 请确保引入这个插件！
+    new VueLoaderPlugin(),
   ],
 
   module: {
@@ -77,6 +81,8 @@ module.exports = {
       },
 
       //   处理css
+      // 它会应用到普通的 `.css` 文件
+      // 以及 `.vue` 文件中的 `<style>` 块
       {
         test: /\.s[ac]ss$/i,
         use: [
@@ -98,12 +104,20 @@ module.exports = {
       },
 
       // 处理js
+      // 它会应用到普通的 `.js` 文件
+      // 以及 `.vue` 文件中的 `<script>` 块
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
         },
+      },
+
+      // 处理.vue
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
       },
     ],
   },
