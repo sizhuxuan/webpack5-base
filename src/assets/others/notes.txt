@@ -1,0 +1,2 @@
+我是一个.txt文件
+内容hello world !

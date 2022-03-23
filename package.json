@@ -1,0 +1,40 @@
+{
+  "name": "webpack5-base",
+  "version": "1.0.0",
+  "description": "",
+  "sideEffects": false,
+  "private": true,
+  "scripts": {
+    "dev": "webpack serve --config ./build/webpack.dev.config.js",
+    "build": "webpack --config ./build/webpack.prod.config.js",
+    "watch": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "autoprefixer": "^10.4.4",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "mini-svg-data-uri": "^1.4.4",
+    "postcss": "^8.4.12",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.4.3",
+    "postcss-scss": "^4.0.3",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "core-js": "^3.21.1"
+  }
+}
